@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Алина Рысмендиева — UX/UI дизайнер">
+  <meta property="og:description" content="Продуктовый UX/UI дизайнер из Бишкека: исследование, прототип, MVP. Кейсы Healthy Back, WeDevX, Mom Life.">
+  <meta property="og:image" content="https://alinauxui.github.io/assets/hero_portrait.png">
+  <link rel="icon" href="assets/logo-dark.png">
+
+  <title>Портфолио Алины</title>
+  <style>html{scroll-behavior:smooth}body{background:#FAFAFA;color:#111;-webkit-font-smoothing:antialiased}</style>
+  <meta name="description" content="Портфолио Алины — UX/UI дизайнера из Бишкека: мобильные и веб-продукты от исследования до прототипа.">
+  
+  <!-- Tailwind CSS v3 with Plugins -->
+  <script src="https://cdn.tailwindcss.com/3.4.17?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              black: '#0D0D0D',
+              dark: '#141414',
+              gray: '#7A7A7A',
+              light: '#F8F9FA',
+              border: '#E5E5E5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Typography & Gradients Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="FlexCarousel.css">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAFAFA;
+      color: #121212;
+      overflow-x: clip;
+      selection-background-color: #000;
+      selection-color: #fff;
+    }
+
+    ::selection {
+      background: #000;
+      color: #fff;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* ============================================================
+       EXPERIENCE HORIZONTAL SPATIAL CANVAS
+       ============================================================ */
+    #exp-horizontal-stage {
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+    .exp-panel {
+      will-change: transform, opacity;
+    }
+    .exp-date-bg {
+      will-change: transform;
+    }
+    @keyframes expLivingFlow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .exp-living-flow {
+      animation: expLivingFlow 4.5s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #experience {
+        height: auto !important;
+      }
+      #exp-sticky-viewport {
+        position: relative !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      #exp-horizontal-stage {
+        flex-direction: column !important;
+        width: 100% !important;
+        transform: none !important;
+      }
+      .exp-panel {
+        width: 100% !important;
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+      }
+      .exp-living-flow {
+        animation: none !important;
+      }
+    }
+
+    #project-modal {
+      transition: opacity 380ms cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 380ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #project-modal-card {
+      transition: transform 440ms cubic-bezier(0.16, 1, 0.3, 1), opacity 360ms cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+      transform: translate3d(0, 0, 0);
+    }
+
+    /* ============================================================
+       EDITORIAL HERO TITLE
+       ============================================================ */
+    /* Metallic gradient for lower text ("PORTFOLIO") only */
+    .metallic-title {
+      display: inline-block;
+      background: linear-gradient(180deg, #1A1A1A 0%, #4A4A4A 35%, #8E8E8E 60%, #BDBDBD 85%, #E5E5E5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Portrait gradient mask so bottom of person fades cleanly into background */
+    .hero-portrait-mask {
+      mask-image: linear-gradient(black 65%, transparent 100%);
+      -webkit-mask-image: linear-gradient(black 65%, transparent 100%);
+    }
+
+    .footer-metallic-title {
+      background: linear-gradient(180deg, #FFFFFF 0%, #a8a8a8 50%, #444444 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: filter 0.3s ease;
+    }
+    .footer-metallic-title:hover {
+      filter: brightness(1.2);
+    }
+
+    .letter-spacing-widest {
+      letter-spacing: 0.18em;
+    }
+
+    .pill-btn {
+      border: 1px solid #D6D6D6;
+      border-radius: 9999px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pill-btn:hover {
+      border-color: #000000;
+      transform: translateY(-1px);
+    }
+
+    .circle-btn {
+      border: 1px solid #D1D1D1;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background-color 0.25s ease;
+    }
+    .circle-btn:hover {
+      border-color: #000;
+      transform: scale(1.08);
+      background-color: #f0f0f0;
+    }
+
+    /* Hero portrait mask */
+    .hero-portrait-mask {
+      mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    }
+
+    /* Accordion transition styles */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, margin 0.3s ease;
+      opacity: 0;
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 250px;
+      opacity: 1;
+      margin-top: 1rem;
+    }
+
+    /* Toast animation */
+    .toast-enter {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    .toast-active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  
+    .pc-tab { border-color: #E2E2E2; background: #fff; color: #525252; }
+    .pc-tab:hover { border-color: #000; color: #000; }
+    .pc-tab[aria-selected="true"] { background: #000; border-color: #000; color: #fff; }
+    .pc-tab:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+    .elegant-title {
+      font-family: "Cormorant Garamond", "Cormorant", "Georgia", "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      text-transform: none;
+    }
+</style>
+
+
+
+</head>
+<body>
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- BEGIN: Navigation Header -->
+  <header class="relative z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 px-6 md:px-14 max-w-[1400px] mx-auto flex items-center justify-between" data-purpose="site-navigation">
+    <!-- Brand Wordmark -->
+    <a class="group font-extrabold text-xl tracking-tight text-black flex items-center" href="#home">
+      <img src="assets/logo-dark.png" alt="Alina Rys" class="h-7 md:h-9 w-auto select-none transition-opacity group-hover:opacity-70" draggable="false">
+    </a>
+
+    <!-- Center Navigation Links (Pill with no unwanted wrapping) -->
+    <nav class="hidden md:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600">
+      <a id="nav-home" class="nav-link px-4 py-2 rounded-full border border-neutral-300 text-black hover:border-black transition whitespace-nowrap" href="#home">ГЛАВНАЯ</a>
+      <a id="nav-projects" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#projects">КЕЙСЫ</a>
+      <a id="nav-process" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#process">ПРОЦЕСС</a>
+      <a id="nav-about" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#about">ОБО МНЕ</a>
+      <a id="nav-experience" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#experience">ОПЫТ</a>
+      <a id="nav-services" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#services">УМЕЮ</a>
+    </nav>
+
+    <!-- Right Social & Menu Links -->
+    <div class="flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm">
+      <!-- Behance -->
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://www.behance.net/rys2" target="_blank" rel="noopener" title="Behance">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.2 11.3c.9-.4 1.4-1.1 1.4-2.1C9.6 7.1 8 6.5 6.2 6.5H1v11h5.4c2 0 3.9-1 3.9-3.2 0-1.4-.7-2.5-2.1-3zM3.4 8.4h2.3c.9 0 1.6.2 1.6 1.2 0 .9-.6 1.2-1.4 1.2H3.4V8.4zm2.6 7.2H3.4v-3h2.7c1.1 0 1.8.5 1.8 1.6 0 1.2-.8 1.4-1.9 1.4zM20.6 7.8h-6V6.4h6v1.4zM23 13.6c0-2.4-1.4-4.4-3.9-4.4-2.5 0-4.2 1.9-4.2 4.3 0 2.5 1.6 4.3 4.2 4.3 1.9 0 3.2-.9 3.8-2.8h-1.9c-.2.7-1.1 1.1-1.8 1.1-1.4 0-2.1-.8-2.1-2.2H23v-.3zm-5.9-.9c.1-1.1.8-1.8 2-1.8 1.1 0 1.7.7 1.8 1.8h-3.8z"/></svg>
+      </a>
+
+      <!-- Telegram -->
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://t.me/alinarysuxui" target="_blank" rel="noopener" title="Telegram">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.9 4.3 18.8 19c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8L18.2 6.3c.4-.3-.1-.5-.6-.2L6.8 12.9 2.2 11.5c-1-.3-1-1 .2-1.5l18-6.9c.8-.3 1.6.2 1.5 1.2z"/></svg>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open Menu" class="md:hidden w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 ml-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="4" x2="20" y1="7" y2="7"></line><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="17" y2="17"></line></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end">
+    <div id="mobile-drawer-content" class="w-4/5 max-w-sm bg-white h-full p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-neutral-200">
+          <img src="assets/logo-dark.png" alt="Alina Rys" class="h-6 w-auto">
+          <button onclick="toggleMobileMenu()" class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-700 hover:border-black">
+            ✕
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 mt-8 text-base font-bold tracking-wider">
+          <a onclick="toggleMobileMenu()" href="#home" class="py-2 border-b border-neutral-100 hover:text-neutral-500">ГЛАВНАЯ</a>
+          <a onclick="toggleMobileMenu()" href="#projects" class="py-2 border-b border-neutral-100 hover:text-neutral-500">КЕЙСЫ</a>
+          <a onclick="toggleMobileMenu()" href="#process" class="py-2 border-b border-neutral-100 hover:text-neutral-500">ПРОЦЕСС</a>
+          <a onclick="toggleMobileMenu()" href="#about" class="py-2 border-b border-neutral-100 hover:text-neutral-500">ОБО МНЕ</a>
+          <a onclick="toggleMobileMenu()" href="#experience" class="py-2 border-b border-neutral-100 hover:text-neutral-500">ОПЫТ</a>
+          <a onclick="toggleMobileMenu()" href="#services" class="py-2 border-b border-neutral-100 hover:text-neutral-500">УМЕЮ</a>
+          <a onclick="toggleMobileMenu(); openContactModal();" href="javascript:void(0)" class="py-2 text-black hover:underline">КОНТАКТЫ</a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-neutral-200">
+        <p class="text-xs uppercase tracking-widest text-neutral-400 mb-3">АЛИНА</p>
+        <p class="text-xs text-neutral-600">UX/UI дизайнер · Бишкек</p>
+      </div>
+    </div>
+  </div>
+  <!-- END: Navigation -->
+
+  <!-- BEGIN: Hero Section -->
+  <main class="relative max-w-[1400px] mx-auto px-6 md:px-14 pt-6 md:pt-12 pb-20 overflow-hidden" data-purpose="hero-section" id="home">
+    <!-- Big Title Header -->
+    <div class="text-center w-full mb-6 md:mb-10 relative z-0 select-none">
+      <h1 id="hero-title" class="text-[9.5vw] md:text-[8rem] lg:text-[9.5rem] font-extrabold uppercase leading-[0.85] tracking-tight">
+        <span class="block">
+          <span class="text-[#121212]">UX/UI</span>
+        </span>
+        <span class="block">
+          <span class="metallic-title">ДИЗАЙНЕР</span>
+        </span>
+      </h1>
+    </div>
+
+    <!-- Center Headshot & Symmetrical Content Grid -->
+    <div class="relative grid grid-cols-1 md:grid-cols-12 items-center mt-2 md:-mt-6">
+      
+      <!-- Left Column: Designer info & Arrow -->
+      <div class="md:col-span-3 flex flex-col items-start md:items-start pl-2 md:pl-6 order-2 md:order-1 pt-6 md:pt-0">
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 mb-4 rounded-full border border-neutral-300 bg-white text-[11px] font-bold tracking-wider uppercase text-neutral-800"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Открыта к работе</span>
+        <span class="text-xs font-bold tracking-wider uppercase text-neutral-800 mb-6">Алина Рысмендиева · Бишкек</span>
+        <a class="circle-btn w-14 h-14 md:w-16 md:h-16 border-neutral-300" href="#projects" aria-label="Перейти к кейсам">
+          <svg class="w-5 h-5 text-neutral-800 transform rotate-45" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Center Column: Stylized Black and White Headshot (in front of text) -->
+      <div class="md:col-span-6 flex flex-col items-center order-1 md:order-2 relative z-10 -mt-16 md:-mt-36">
+        <div class="relative w-[320px] h-[400px] md:w-[480px] md:h-[580px] flex items-end justify-center hero-portrait-mask">
+          <img src="assets/hero_portrait.png"
+               alt="Алина — UX/UI дизайнер"
+               class="w-full h-full object-contain object-bottom pointer-events-none select-none transition-transform duration-700 hover:scale-[1.02]"
+>
+        </div>
+      </div>
+
+      <!-- Right Column: Pitch and Disciplines -->
+      <div class="md:col-span-3 flex flex-col items-start md:items-end text-left order-3 pt-6 md:pt-0 pr-2 md:pr-6 space-y-10">
+        <!-- Pitch Quote -->
+        <p class="text-[11px] md:text-xs uppercase font-medium leading-relaxed tracking-wider text-neutral-700 max-w-[220px] text-left">
+          ИССЛЕДУЮ, ПРОЕКТИРУЮ И ДОВОЖУ ПРОДУКТ ДО MVP. ТОП-3 PROSPERITY CUP С СОБСТВЕННЫМ СТАРТАПОМ.
+        </p>
+
+        <!-- Service List with hover interaction -->
+        <div class="flex flex-col space-y-3 text-[11px] md:text-xs font-semibold tracking-widest text-neutral-600 uppercase">
+          <a href="#services" onclick="selectService(0)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5">
+            <span>UX-ИССЛЕДОВАНИЯ</span>
+          </a>
+          <a href="#services" onclick="selectService(1)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5">
+            <span>UI-ДИЗАЙН</span>
+          </a>
+          <a href="#services" onclick="selectService(1)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5 font-bold text-black">
+            <span>ПРОТОТИПЫ</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <!-- END: Hero Section -->
+
+  <!-- BEGIN: Featured Project Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-16" data-purpose="featured-projects" id="projects">
+    <!-- Header -->
+    <div class="mb-8">
+      <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
+        КЕЙСЫ
+      </h2>
+      <p class="mt-3 text-xs uppercase font-medium tracking-wider text-neutral-500">Нажмите на карточку, чтобы открыть описание</p>
+    </div>
+
+    <!-- Dynamic Projects Content Area with FlexCarousel -->
+    <div id="projects-content" class="w-full">
+      <div id="flex-carousel-container" class="rounded-3xl border border-neutral-200 bg-[#EFEFEF] overflow-hidden shadow-inner" style="width: 100%; height: 560px; position: relative;">
+        <!-- FlexCarousel mounts here -->
+      </div>
+    </div>
+  </section>
+  <!-- END: Featured Project Section -->
+
+  <!-- BEGIN: Process Section (what was done in each project) -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-16" data-purpose="process-section" id="process">
+    <div class="mb-8 flex flex-col gap-3">
+      <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">ЧТО Я СДЕЛАЛА</h2>
+      <p class="text-xs uppercase font-medium tracking-wider text-neutral-500 max-w-2xl">Коротко по каждому проекту: что узнала из исследования, какое решение приняла и к чему это привело.</p>
+    </div>
+    <div class="flex gap-2 mb-6 overflow-x-auto no-scrollbar pb-1" role="tablist" aria-label="Проекты">
+        <button type="button" role="tab" id="pc-tab-hb" aria-controls="pc-panel-hb" aria-selected="true" onclick="selectProcess(0)"
+          class="pc-tab px-5 py-2.5 rounded-full border text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Healthy Back</button>
+        <button type="button" role="tab" id="pc-tab-wd" aria-controls="pc-panel-wd" aria-selected="false" onclick="selectProcess(1)"
+          class="pc-tab px-5 py-2.5 rounded-full border text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">WeDevX</button>
+        <button type="button" role="tab" id="pc-tab-ml" aria-controls="pc-panel-ml" aria-selected="false" onclick="selectProcess(2)"
+          class="pc-tab px-5 py-2.5 rounded-full border text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Mom Life</button>
+    </div>
+      <div id="pc-panel-hb" role="tabpanel" aria-labelledby="pc-tab-hb" class="pc-panel">
+        <div class="rounded-3xl border border-neutral-300 bg-white p-6 md:p-10 grid gap-8">
+          <div class="grid gap-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">01 / 03</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">2023–2024</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Health tech</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мобильное приложение</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">0 → MVP</span><span class="px-3 py-1 rounded-full bg-neutral-100 text-[10px] font-semibold tracking-widest uppercase text-neutral-500">Сейчас на паузе</span>
+            </div>
+            <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-[0.9]">Healthy Back</h3>
+            <p class="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">Сооснователь и единственный продуктовый дизайнер: исследование, продукт, бизнес-модель, UX/UI.</p>
+          </div>
+          <dl class="m-0">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Инсайт</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">Самый большой сегмент в анкетах, молодые офисные сотрудники, не готов платить. Платят женщины 40+ с хронической болью, и фокус продукта сместился на них.</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Что сделала</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">219 анкет и 30+ интервью. Вместо длинной анкеты — бот, карта тела, экспресс-тренировки на 5 минут, вход по номеру телефона. Собрала прототип и проверила спрос рекламой до разработки.</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Результат</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">Топ-3 Prosperity Cup Kyrgyzstan 2023 и выход на инвестиционный комитет. Спрос проверили до разработки, собран MVP 1.0.0 на Flutter.</dd>
+            </div>
+          </dl>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-black">
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">219</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">ответов в 4 анкетах</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">30+</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">интервью</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">101</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">переход по рекламе за 3 дня</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">$0,15</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">цена клика в тесте спроса</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pc-panel-wd" role="tabpanel" aria-labelledby="pc-tab-wd" class="pc-panel" hidden>
+        <div class="rounded-3xl border border-neutral-300 bg-white p-6 md:p-10 grid gap-8">
+          <div class="grid gap-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">02 / 03</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Дек 2022 — июл 2023</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Edtech</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Веб</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Antler Singapore</span>
+            </div>
+            <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-[0.9]">WeDevX</h3>
+            <p class="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">Стажировка в стартапе, единственный продуктовый дизайнер. Идею менторской платформы предложила сама: у школы уже была платформа обучения.</p>
+          </div>
+          <dl class="m-0">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Инсайт</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">93% студентов хотят ментора 1-на-1, но половина готова только на бесплатный формат. Курс заканчивался, а карьера — нет.</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Что сделала</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">SkillPoints: доступ к ментору зарабатывается учёбой и активностью. Две дороги к сессии: баллы или $10–30. Готовые темы брони: интервью, CV, портфолио.</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Результат</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">От нуля до MVP за 8 месяцев. Стартап прошёл акселератор Antler Singapore. Ключевые решения проверила юзабилити-тестом.</dd>
+            </div>
+          </dl>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-black">
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">93%</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">хотят ментора 1-на-1</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">50</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">студентов в 2 опросах</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">5</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">студентов в юзабилити-тесте</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">8 мес</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">до MVP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pc-panel-ml" role="tabpanel" aria-labelledby="pc-tab-ml" class="pc-panel" hidden>
+        <div class="rounded-3xl border border-neutral-300 bg-white p-6 md:p-10 grid gap-8">
+          <div class="grid gap-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">03 / 03</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">2026</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мамы и дети</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мобильное приложение</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Концепт</span>
+            </div>
+            <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-[0.9]">Mom Life</h3>
+            <p class="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">Неофициальный концепт редизайна. Шрифт, цвета и таб-бар оставила из текущего Mom Life: менялись сценарии, а не узнаваемость продукта.</p>
+          </div>
+          <dl class="m-0">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Инсайт</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">Полезные ответы тонут в общей ленте и объявлениях, а медицинские советы мам выглядят так же весомо, как ответ врача.</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Что сделала</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">Сверху — блок «Помогло мамам на вашем сроке», объявления свёрнуты в одну карточку, проверенный ответ педиатра стоит над комментариями. Пост скрывается одним тапом, а причина скрытия влияет на то, что покажет лента.</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Результат</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">12 экранов концепта, включая ночную ленту и сценарий «малыш болеет». ИИ-помощник отмечен как гипотеза. С пользователями пока не тестировался.</dd>
+            </div>
+          </dl>
+          <div class="grid grid-cols-2 gap-6 pt-6 border-t border-black">
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">12</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">экранов</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">1 тап</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">скрыть пост</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- END: Process Section -->
+
+  <!-- BEGIN: About Section (ScrollExpandMedia Component) -->
+  <section class="relative w-full bg-[#0D0D0D] text-white" id="about" style="min-height: 200vh;">
+    <div class="sticky top-0 w-full h-[100dvh] overflow-hidden flex flex-col items-center justify-start z-10">
+      <!-- Background Ambient with dynamic opacity: 1 - scrollProgress (Previous Starry Night Castle Background) -->
+      <div id="sem-bg-img" class="absolute inset-0 z-0 h-full w-full pointer-events-none transition-opacity duration-150 ease-out" style="will-change: opacity; transform: translateZ(0);">
+        <img
+          src="assets/about_bg_night.jpg"
+          alt=""
+          class="w-full h-full object-cover object-center"
+        />
+        <div class="absolute inset-0 bg-black/25"></div>
+      </div>
+
+      <!-- Centered Interactive Stage Container (Exact from React Component) -->
+      <div class="container mx-auto flex flex-col items-center justify-start relative z-10 w-full h-full">
+        <div class="flex flex-col items-center justify-center w-full h-[100dvh] relative">
+          
+          <!-- Expanding Media Card (Closed state: 300px x 400px, expands on scroll) -->
+          <div
+            id="sem-media-container"
+            class="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl overflow-hidden shadow-2xl transition-none bg-[#07090E]"
+            style="width: 300px; height: 400px; max-width: 95vw; max-height: 85vh; box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9); border: 1px solid rgba(255,255,255,0.35); will-change: width, height; backface-visibility: hidden;"
+          >
+            <!-- Media Image Container: fits 100% of the box without any letterboxing or cropping -->
+            <div class="relative w-full h-full overflow-hidden rounded-xl flex items-center justify-center bg-[#07090E]">
+              <!-- Crisp Base Image (GPU accelerated) -->
+              <img
+                id="sem-media-img"
+                src="assets/about_tunnel.jpg"
+                alt="Алина — обо мне"
+                class="w-full h-full object-contain rounded-xl transition-none"
+                style="transform: scale(1.02) translateZ(0); transform-origin: center; backface-visibility: hidden; object-position: 50% 50%;"
+              />
+              <!-- Pre-blurred Layer for 120 FPS GPU-accelerated Unblur (fades out opacity smoothly on scroll) -->
+              <img
+                id="sem-media-blur"
+                src="assets/about_tunnel.jpg"
+                alt=""
+                aria-hidden="true"
+                class="absolute inset-0 w-full h-full object-cover rounded-xl transition-none pointer-events-none"
+                style="object-position: 50% 50%; filter: blur(18px); transform: scale(1.08) translateZ(0); transform-origin: center; opacity: 1; will-change: opacity; backface-visibility: hidden;"
+              />
+              <!-- Subtle Gradient Overlay: protects top/bottom legibility while keeping the center 100% transparent -->
+              <div id="sem-media-overlay" class="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/85 rounded-xl transition-opacity duration-150 pointer-events-none"></div>
+
+              <!-- Minimal Aesthetic About Info - Perimeter Layout with Empty Center -->
+              <div
+                id="sem-media-content"
+                class="absolute inset-0 z-20 flex flex-col justify-between p-5 sm:p-7 md:p-9 pointer-events-none opacity-0 transition-all duration-300 select-none"
+              >
+                <!-- Top Perimeter: Refined Monochrome Headline -->
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-white/10 pb-3">
+                  <h3 class="text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-tight text-white max-w-xl">
+                    ИЗ АРХИТЕКТУРЫ — В ПРОДУКТОВЫЙ ДИЗАЙН
+                  </h3>
+                  <span class="text-[10px] font-mono tracking-wider uppercase text-neutral-400 shrink-0">
+                    БИШКЕК &bull; УДАЛЁННО
+                  </span>
+                </div>
+
+                <!-- Center Zone: COMPLETELY OPEN & EMPTY - 100% unobscured view of artwork -->
+                <div class="flex-1 pointer-events-none min-h-[140px] md:min-h-[200px]"></div>
+
+                <!-- Bottom Perimeter: Disciplines, About Summary & Monochrome CTAs -->
+                <div class="pt-3 border-t border-white/10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                  <!-- About Me Summary & Disciplines -->
+                  <div class="max-w-xl space-y-2 bg-black/75 backdrop-blur-md rounded-2xl px-4 py-3 sm:px-5 sm:py-4 border border-white/10">
+                    <div class="flex items-center gap-2.5">
+                      <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">ЧЕМ ЗАНИМАЮСЬ</span>
+                      <div class="h-px bg-white/15 w-6"></div>
+                      <span class="text-[10px] font-mono tracking-widest uppercase text-neutral-400">UX &bull; UI &bull; ИССЛЕДОВАНИЯ &bull; FIGMA</span>
+                    </div>
+                    <p class="text-sm sm:text-[15px] font-normal leading-relaxed text-neutral-200">
+                      Архитектор по образованию, потом интерьеры и SMM. С 2022 года в продуктовом дизайне: стажировка в стартапе WeDevX (прошёл акселератор Antler), затем свой продукт Healthy Back. Сама провожу опросы и интервью и довожу решения до прототипа.
+                    </p>
+                  </div>
+
+                  <!-- Monochrome Action Buttons -->
+                  <div class="flex items-center gap-3 shrink-0 pt-1 md:pt-0">
+                    <a href="javascript:void(0)" onclick="openContactModal()" class="pointer-events-auto px-5 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-2">
+                      <span>НАПИСАТЬ МНЕ</span>
+                      <svg class="w-3.5 h-3.5 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                    <a href="#projects" class="pointer-events-auto px-5 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200">
+                      КЕЙСЫ
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Subtitles (Translate Outward) -->
+            <div class="flex flex-col items-center text-center relative z-10 mt-4 pointer-events-none">
+              <p id="sem-date" class="text-xl md:text-2xl text-neutral-300 font-semibold tracking-wider uppercase transition-none drop-shadow">
+                ПУТЬ И ПОДХОД
+              </p>
+              <p id="sem-scroll-prompt" class="text-neutral-400 font-medium text-xs tracking-widest uppercase transition-none mt-1 drop-shadow">
+                ЛИСТАЙТЕ ВНИЗ
+              </p>
+            </div>
+          </div>
+
+          <!-- Splitting Title Header (ABOUT translates left, ME translates right) -->
+          <div class="flex items-center justify-center text-center gap-2 sm:gap-4 w-full relative z-10 pointer-events-none flex-col" style="will-change: transform; backface-visibility: hidden;">
+            <h2 id="sem-title-first" class="elegant-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white transition-none drop-shadow-2xl" style="will-change: transform, opacity;">
+              Обо
+            </h2>
+            <h2 id="sem-title-rest" class="elegant-title text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white transition-none drop-shadow-2xl" style="will-change: transform, opacity;">
+              мне
+            </h2>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: About Section (ScrollExpandMedia Component) -->
+
+  <!-- BEGIN: Experience Section ("Where I've Been" — Horizontal Cinematic Installation) -->
+  <section
+    class="relative w-full bg-[#070709] text-white overflow-visible"
+    data-purpose="experience-section"
+    id="experience"
+    style="height: 380vh;"
+    string="progress"
+    string-id="experience-journey"
+  >
+    <!-- Sticky 100vh Theater / Viewport Window -->
+    <div
+      id="exp-sticky-viewport"
+      class="sticky top-0 w-full h-[100dvh] overflow-hidden bg-[#070709] flex flex-col justify-between select-none"
+    >
+      <!-- Layer 0: Background Cinematic Ambience & Atmospheric Grid -->
+      <div class="absolute inset-0 pointer-events-none opacity-20">
+        <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+
+      <!-- Layer 0B: Massive Ambient Horizontal Running Tickers (Layered Depth) -->
+      <div class="absolute inset-0 flex flex-col justify-around pointer-events-none overflow-hidden opacity-[0.035]">
+        <!-- Upper Ticker (Drifting Left) -->
+        <div id="exp-ticker-top" class="whitespace-nowrap font-black uppercase text-[14vw] tracking-tighter will-change-transform leading-none">
+          АРХИТЕКТУРА &nbsp;&nbsp; ИНТЕРЬЕР &nbsp;&nbsp; SMM &nbsp;&nbsp; UX/UI &nbsp;&nbsp; АРХИТЕКТУРА &nbsp;&nbsp; ИНТЕРЬЕР &nbsp;&nbsp; SMM &nbsp;&nbsp; UX/UI &nbsp;&nbsp;
+        </div>
+        <!-- Lower Ticker (Drifting Right) -->
+        <div id="exp-ticker-bottom" class="whitespace-nowrap font-black uppercase text-[14vw] tracking-tighter will-change-transform leading-none">
+          ИССЛЕДОВАНИЯ &nbsp;&nbsp; ПРОТОТИПЫ &nbsp;&nbsp; ИНТЕРФЕЙСЫ &nbsp;&nbsp; ИССЛЕДОВАНИЯ &nbsp;&nbsp; ПРОТОТИПЫ &nbsp;&nbsp; ИНТЕРФЕЙСЫ &nbsp;&nbsp;
+        </div>
+      </div>
+
+      <!-- Top Minimalist Editorial HUD Bar -->
+      <header class="relative z-30 w-full px-6 md:px-14 pt-6 pb-4 flex items-center justify-between border-b border-white/[0.08] backdrop-blur-md bg-[#070709]/80">
+        <div class="flex items-center gap-4">
+          <span id="exp-hud-phase" class="text-[11px] font-semibold tracking-widest uppercase text-neutral-400">
+            МОЙ ПУТЬ
+          </span>
+        </div>
+
+        <!-- Progress Tracker Bar (Top Hairline) -->
+        <div class="flex items-center gap-3">
+          <div class="w-24 sm:w-36 h-[2px] bg-white/10 rounded-full overflow-hidden">
+            <div id="exp-hud-progress" class="h-full bg-white transition-all duration-75 w-0"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Center: Massive Horizontal Spatial Canvas (Controlled by Vertical Scroll) -->
+      <div class="relative z-20 flex-1 w-full overflow-hidden flex items-center">
+        <div
+          id="exp-horizontal-stage"
+          class="flex items-center h-full will-change-transform transition-none"
+          style="width: 390vw;"
+        >
+          <!-- ================= INTRO ENVIRONMENT (0vw - 90vw) ================= -->
+          <div class="exp-panel flex-shrink-0 w-[95vw] md:w-[85vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <div class="max-w-3xl">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] text-[10px] font-semibold tracking-widest uppercase text-neutral-300 mb-6">
+                <span>ОТКУДА Я ПРИШЛА</span>
+              </div>
+              <h2 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-white leading-[0.88] mb-8">
+                МОЙ<br>ПУТЬ
+              </h2>
+              <p class="text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed max-w-xl font-normal">
+                Архитектура научила думать о человеке в пространстве, SMM — говорить с аудиторией. В UX/UI я соединяю и то и другое.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <div
+              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
+              data-parallax-factor="0.15"
+            >
+              01
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
+                  01
+                </span>
+                <span class="h-[1px] w-12 bg-white/20"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-white">
+                  АРХИТЕКТУРА И ИНТЕРЬЕР
+                </span>
+              </div>
+
+              <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
+                АРХИТЕКТОР<br>ПО ОБРАЗОВАНИЮ
+              </h3>
+
+              <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
+                Училась на архитектора, после выпуска занималась дизайном интерьеров. Отсюда — привычка начинать с того, как человек будет пользоваться пространством.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">ОСНОВА</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Композиция, сетки и визуальная иерархия</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">ИНТЕРЬЕРЫ</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Проекты под реальные сценарии жизни людей</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">ЧТО ВЗЯЛА В UX</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Сначала задача и человек, потом форма</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <div
+              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
+              data-parallax-factor="0.15"
+            >
+              02
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
+                  02
+                </span>
+                <span class="h-[1px] w-12 bg-white/20"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-white">
+                  SMM И КОНТЕНТ
+                </span>
+              </div>
+
+              <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
+                SMM<br>И КОНТЕНТ
+              </h3>
+
+              <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
+                Вела Instagram для Master Plova и Artis Construction: оформление, контент, промо-ролики. Научилась понимать аудиторию и говорить с ней простым языком.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MASTER PLOVA</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Оформление Instagram и съёмка промо-роликов</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">ARTIS CONSTRUCTION</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Ведение Instagram строительной компании</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
+            <div
+              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
+              data-parallax-factor="0.15"
+            >
+              2022 — СЕЙЧАС
+            </div>
+
+            <div class="relative z-10 max-w-4xl">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
+                  2022 — СЕЙЧАС
+                </span>
+                <span class="h-[1px] w-12 bg-white/20"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-white">
+                  UX/UI ДИЗАЙН
+                </span>
+                <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full border border-white/20 text-[10px] font-semibold uppercase text-neutral-300">
+                  ПРОДУКТ
+                </span>
+              </div>
+
+              <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
+                UX/UI<br>ДИЗАЙНЕР
+              </h3>
+
+              <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
+                Проектирую мобильные и веб-продукты: исследование, инсайты, прототип, проверка на пользователях. Делала продукты в health tech, edtech и для родителей.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">WEDEVX · 2022–2023</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Удалённая стажировка продакт-дизайнером</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">HEALTHY BACK · 2023–2024</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Сооснователь и продакт-дизайнер, топ-3 Prosperity Cup. Сейчас на паузе</div>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MAMA SPACE · 2023</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Концепция приложения на этапе идеи</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Minimalist Editorial Navigation & Spatial Status Bar -->
+      <footer class="relative z-30 w-full px-6 md:px-14 py-4 flex items-center justify-between border-t border-white/[0.08] backdrop-blur-md bg-[#070709]/80">
+        <!-- Interactive Navigation Markers -->
+        <div class="flex items-center gap-2 sm:gap-4">
+<button type="button" class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/5 text-neutral-500 hover:text-white transition-all hover:border-white/20" data-target-progress="0.29">АРХИТЕКТУРА</button>
+          <button type="button" class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/5 text-neutral-500 hover:text-white transition-all hover:border-white/20" data-target-progress="0.64">SMM</button>
+          <button type="button" class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/5 text-neutral-500 hover:text-white transition-all hover:border-white/20" data-target-progress="0.98">UX/UI</button>
+        </div>
+      </footer>
+    </div>
+  </section>
+  <!-- END: Experience Section -->
+
+
+
+
+  <!-- BEGIN: Services Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-20" data-purpose="services-section" id="services">
+    <!-- Centered Header -->
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900 mb-4">
+        ЧТО УМЕЮ
+      </h2>
+      <p class="text-xs md:text-xs uppercase font-medium leading-relaxed tracking-wider text-neutral-500">
+        ИЩУ РАБОТУ UX/UI ДИЗАЙНЕРОМ. ОТКРЫТА К ЛЮБОЙ СФЕРЕ, СТАЖИРОВКАМ И JUNIOR-ПОЗИЦИЯМ — В ОФИСЕ В БИШКЕКЕ ИЛИ УДАЛЁННО.
+      </p>
+      <div class="flex flex-wrap justify-center gap-2 mt-6">
+        <span class="px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-[11px] font-semibold tracking-wider uppercase text-neutral-700">Figma</span>
+        <span class="px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-[11px] font-semibold tracking-wider uppercase text-neutral-700">Прототипирование</span>
+        <span class="px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-[11px] font-semibold tracking-wider uppercase text-neutral-700">Опросы и интервью</span>
+        <span class="px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-[11px] font-semibold tracking-wider uppercase text-neutral-700">Юзабилити-тесты</span>
+        <span class="px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-[11px] font-semibold tracking-wider uppercase text-neutral-700">CJM</span>
+      </div>
+    </div>
+
+    <!-- Service Pill Rows Accordion -->
+    <div class="max-w-4xl mx-auto flex flex-col space-y-3.5">
+      
+      <!-- Item 1: UI/UX -->
+      <div id="service-0" onclick="toggleService(0)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl border border-neutral-300 bg-white hover:border-black transition-all cursor-pointer">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-xs font-medium text-neutral-700">1</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800">UX-ИССЛЕДОВАНИЯ</span>
+          <div class="item-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center transition-transform">
+            <svg class="w-3.5 h-3.5 text-neutral-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="text-xs text-neutral-500 leading-relaxed max-w-2xl mb-4">
+            Опросы и интервью, поиск инсайтов, пользовательские сценарии и юзабилити-тесты. Помогаю понять, что на самом деле нужно людям, до того как рисовать экраны.
+          </p>
+          <div class="flex items-center justify-between border-t border-neutral-200 pt-3">
+            <span class="text-[11px] font-mono text-neutral-400">РЕЗУЛЬТАТ: ИНСАЙТЫ, CJM, СЦЕНАРИИ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: WEB DESIGN -->
+      <div id="service-1" onclick="toggleService(1)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl border border-neutral-300 bg-white hover:border-black transition-all cursor-pointer">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-xs font-medium text-neutral-700">2</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800">UI-ДИЗАЙН И ПРОТОТИПЫ</span>
+          <div class="item-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center transition-transform">
+            <svg class="w-3.5 h-3.5 text-neutral-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="text-xs text-neutral-500 leading-relaxed max-w-2xl mb-4">
+            Интерфейсы мобильных приложений в Figma: от вайрфреймов до финальных экранов, компоненты и кликабельные прототипы.
+          </p>
+          <div class="flex items-center justify-between border-t border-neutral-200 pt-3">
+            <span class="text-[11px] font-mono text-neutral-400">РЕЗУЛЬТАТ: МАКЕТЫ, UI-KIT, ПРОТОТИП</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: LANDING PAGE DESIGN (Active by default) -->
+      <div id="service-2" onclick="toggleService(2)" class="accordion-item active w-full flex flex-col px-6 py-4 rounded-3xl bg-black text-white shadow-xl cursor-pointer transition-all transform scale-[1.01]">
+        <div class="flex items-center justify-between">
+          <span class="item-badge w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-medium text-neutral-300">3</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-white">UX-АУДИТ И РЕДИЗАЙН</span>
+          <div class="item-icon w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center transition-transform rotate-90">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+        <div class="accordion-content">
+          <p class="text-xs text-neutral-300 leading-relaxed max-w-2xl mb-4">
+            Разбираю существующий продукт по отзывам и сценариям, нахожу слабые места и предлагаю редизайн с приоритетами.
+          </p>
+          <div class="flex items-center justify-between border-t border-neutral-800 pt-3">
+            <span class="text-[11px] font-mono text-neutral-400">РЕЗУЛЬТАТ: СПИСОК ПРОБЛЕМ, ПРИОРИТЕТЫ, НОВЫЕ ЭКРАНЫ</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- END: Services Section -->
+
+  <!-- BEGIN: Contact / Let's Talk Footer -->
+  <footer class="w-full bg-[#0D0D0D] text-white pt-20 pb-12 mt-12" data-purpose="footer-section" id="contact">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-14 flex flex-col items-center">
+      
+      <!-- Metallic Callout Headline -->
+      <div class="w-full text-center py-6 md:py-10">
+        <h2 class="elegant-title text-[16vw] md:text-[10rem] lg:text-[12rem] leading-[1.05] footer-metallic-title select-none cursor-pointer pb-4" onclick="openContactModal()">
+          На связи
+        </h2>
+      </div>
+
+      <!-- Action Button Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 mt-8 mb-20">
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://www.behance.net/rys2" target="_blank" rel="noopener">
+          BEHANCE
+        </a>
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://t.me/alinarysuxui" target="_blank" rel="noopener">
+          TELEGRAM
+        </a>
+        <button type="button" onclick="copyContactEmail()" class="px-7 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold tracking-wider normal-case transition transform hover:scale-105">
+          alinauxui97@gmail.com · скопировать
+        </button>
+      </div>
+
+      <!-- Bottom Credits Bar -->
+      <div class="w-full pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-widest uppercase text-neutral-600 font-semibold gap-4">
+        <div class="flex items-center gap-4"><img src="assets/logo-light.png" alt="Alina Rys" class="h-6 w-auto opacity-80"><span>© 2026 · UX/UI ДИЗАЙНЕР</span></div>
+        <!-- Based on ECHO by Jishnu Mondal (github.com/Jishnu09-siuu/ECHO-WEBSITE), MIT License -->
+      </div>
+
+    </div>
+  </footer>
+  <!-- END: Contact / Let's Talk Footer -->
+
+  <!-- MODAL: Project Detail Modal -->
+  <div id="project-modal" onclick="if(event.target === this) closeProjectModal()" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none flex items-center justify-center p-4">
+    <div id="project-modal-card" class="bg-white rounded-[32px] max-w-2xl w-full max-h-[90vh] overflow-y-auto no-scrollbar p-6 sm:p-8 md:p-9 shadow-2xl border border-neutral-100 opacity-0 scale-[0.94] translate-y-4 relative">
+      <div class="relative text-center pb-4 mb-5 border-b border-neutral-100">
+        <span id="modal-project-category" class="block text-[11px] font-bold tracking-widest uppercase text-neutral-400 mb-1">CATEGORY</span>
+        <h3 id="modal-project-title" class="text-2xl sm:text-3xl font-black uppercase text-neutral-900 tracking-tight">PROJECT TITLE</h3>
+        <button onclick="closeProjectModal()" class="absolute right-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-500 hover:border-black hover:text-black hover:bg-neutral-50 transition-colors" aria-label="Закрыть">✕</button>
+      </div>
+      <div id="modal-project-body" class="space-y-5 text-sm text-neutral-700">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Contact Form Modal -->
+  <div id="contact-modal" onclick="if(event.target === this) closeContactModal()" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+    <div id="contact-modal-card" class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300">
+      <div class="flex justify-between items-center border-b border-neutral-200 pb-4 mb-6">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">СВЯЗАТЬСЯ</span>
+          <h3 class="text-xl font-black uppercase text-neutral-900">ДАВАЙТЕ ПОГОВОРИМ</h3>
+        </div>
+        <button onclick="closeContactModal()" aria-label="Закрыть" class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-600 hover:border-black hover:text-black">✕</button>
+      </div>
+      
+      <div class="space-y-3">
+        <p class="text-sm text-neutral-600 leading-relaxed">Открыта к стажировкам и junior-позициям UX/UI. Отвечаю в течение дня, быстрее всего в Telegram.</p>
+        <button type="button" onclick="copyContactEmail()" class="w-full flex items-center justify-between px-5 py-4 rounded-2xl border border-neutral-300 hover:border-black transition text-left">
+          <span class="text-xs font-bold tracking-widest uppercase text-neutral-900">Почта</span><span class="text-xs text-neutral-500 select-all">alinauxui97@gmail.com · скопировать</span>
+        </button>
+        <a href="https://t.me/alinarysuxui" target="_blank" rel="noopener" class="w-full flex items-center justify-between px-5 py-4 rounded-2xl bg-black text-white hover:bg-neutral-800 transition">
+          <span class="text-xs font-bold tracking-widest uppercase">Telegram</span><span class="text-xs text-neutral-400">@alinarysuxui ↗</span>
+        </a>
+        <a href="https://www.behance.net/rys2" target="_blank" rel="noopener" class="w-full flex items-center justify-between px-5 py-4 rounded-2xl border border-neutral-300 hover:border-black transition">
+          <span class="text-xs font-bold tracking-widest uppercase text-neutral-900">Behance</span><span class="text-xs text-neutral-500">behance.net/rys2 ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JAVASCRIPT: Comprehensive Interactivity -->
+  <script>
+    // Cart state
+    let cart = [];
+
+    // Project data details
+    const projectsData = {};
+
+    // Filter projects
+    function filterProjects(filter) {
+      const tabs = {
+        all: document.getElementById('filter-all'),
+        web: document.getElementById('filter-web'),
+        landing: document.getElementById('filter-landing')
+      };
+
+      Object.keys(tabs).forEach(k => {
+        if (!tabs[k]) return;
+        if (k === filter) {
+          tabs[k].className = 'filter-tab px-6 py-2.5 rounded-full bg-black text-white text-xs font-semibold tracking-wider uppercase shadow-sm transition';
+        } else {
+          tabs[k].className = 'filter-tab px-6 py-2.5 rounded-full bg-white border border-neutral-300 text-neutral-700 hover:border-black text-xs font-semibold tracking-wider uppercase transition';
+        }
+      });
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = 'flex';
+        } else if (filter === 'web') {
+          card.style.display = card.classList.contains('web-project') ? 'flex' : 'none';
+        } else if (filter === 'landing') {
+          card.style.display = card.classList.contains('landing-project') ? 'flex' : 'none';
+        }
+      });
+    }
+
+    // Process tabs
+    function selectProcess(index) {
+      const tabs = document.querySelectorAll('.pc-tab');
+      const panels = document.querySelectorAll('.pc-panel');
+      tabs.forEach((t, i) => t.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+      panels.forEach((p, i) => { p.hidden = i !== index; });
+    }
+    window.selectProcess = selectProcess;
+
+    // Services Accordion Logic
+    function toggleService(index) {
+      const items = document.querySelectorAll('.accordion-item');
+      items.forEach((item, i) => {
+        const badge = item.querySelector('.item-badge');
+        const title = item.querySelector('.item-title');
+        const icon = item.querySelector('.item-icon');
+        const iconSvg = icon.querySelector('svg');
+
+        if (i === index) {
+          const isActive = item.classList.contains('active');
+          if (isActive && items.length > 1) {
+            // Optional: toggle off or keep active
+          } else {
+            item.classList.add('active', 'bg-black', 'text-white', 'shadow-xl', 'scale-[1.01]');
+            item.classList.remove('bg-white', 'text-neutral-800', 'border-neutral-300');
+            badge.className = 'item-badge w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-medium text-neutral-300';
+            title.className = 'item-title text-xs md:text-sm font-bold tracking-widest uppercase text-white';
+            icon.className = 'item-icon w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center transition-transform rotate-90';
+            iconSvg.className = 'w-3.5 h-3.5 text-white';
+          }
+        } else {
+          item.classList.remove('active', 'bg-black', 'text-white', 'shadow-xl', 'scale-[1.01]');
+          item.classList.add('bg-white', 'text-neutral-800', 'border-neutral-300');
+          badge.className = 'item-badge w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-xs font-medium text-neutral-700';
+          title.className = 'item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800';
+          icon.className = 'item-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center transition-transform rotate-0';
+          iconSvg.className = 'w-3.5 h-3.5 text-neutral-700';
+        }
+      });
+    }
+
+    function selectService(index) {
+      const items = document.querySelectorAll('.accordion-item');
+      if (items && items[index]) {
+        toggleService(index);
+      }
+    }
+
+    function bookSpecificService(serviceName) {
+      openContactModal();
+      const select = document.getElementById('contact-service');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.includes(serviceName) || select.options[i].value.includes(serviceName)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    // Modal Handlers
+    function openProjectModal(itemOrKey) {
+      let data = null;
+      if (typeof itemOrKey === 'object' && itemOrKey !== null) {
+        data = itemOrKey;
+      } else {
+        data = projectsData[itemOrKey];
+      }
+      if (!data) return;
+
+      const category = data.subtitle || data.category || 'КЕЙС';
+      const title = data.title || 'КЕЙС';
+      document.getElementById('modal-project-category').innerText = category;
+      document.getElementById('modal-project-title').innerText = title;
+      
+      let html = '';
+      if (data.src) {
+        html += `
+          <div class="w-full h-52 sm:h-64 rounded-2xl overflow-hidden border border-neutral-200/80 bg-neutral-100 shadow-inner">
+            <img src="${data.src}" alt="${data.alt || title}" class="w-full h-full object-cover object-top" />
+          </div>
+        `;
+      }
+      if (data.description) {
+        html += `<p class="text-neutral-600 leading-relaxed font-normal text-sm sm:text-base text-center max-w-xl mx-auto">${data.description}</p>`;
+      }
+      if (data.stats) {
+        html += `
+          <div class="bg-neutral-50 p-4 rounded-2xl border border-neutral-200 text-center">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-neutral-500 mb-1">Главное</p>
+            <p class="text-xs text-neutral-800 font-medium">${data.stats}</p>
+          </div>
+        `;
+      }
+      if (data.deliverables && data.deliverables.length) {
+        html += `
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-black mb-2 text-center">Что я сделала</h4>
+            <ul class="list-disc pl-5 space-y-1 text-xs text-neutral-600 max-w-md mx-auto">
+              ${data.deliverables.map(d => `<li>${d}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      }
+      if (data.tools && data.tools.length) {
+        html += `
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-black mb-2 text-center">Инструменты и методы</h4>
+            <div class="flex flex-wrap justify-center gap-2">
+              ${data.tools.map(t => `<span class="px-3 py-1 bg-neutral-100 border border-neutral-200 text-neutral-800 text-[10px] font-semibold rounded-full uppercase">${t}</span>`).join('')}
+            </div>
+          </div>
+        `;
+      }
+      if (data.link) {
+        html += `
+          <div class="pt-2 flex justify-center items-center">
+            <a href="${data.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-black text-white text-xs font-bold uppercase tracking-wider hover:bg-neutral-800 transition-all shadow-md hover:shadow-xl hover:scale-105 active:scale-95">
+              Смотреть кейс на Behance ↗
+            </a>
+          </div>
+        `;
+      }
+
+      document.getElementById('modal-project-body').innerHTML = html;
+
+      const modal = document.getElementById('project-modal');
+      const card = document.getElementById('project-modal-card');
+      if (!modal || !card) return;
+
+      modal.classList.remove('pointer-events-none');
+      void modal.offsetWidth; // Force reflow so transition starts cleanly
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+        card.classList.remove('opacity-0', 'scale-[0.94]', 'translate-y-4');
+        card.classList.add('opacity-100', 'scale-100', 'translate-y-0');
+      });
+    }
+    window.openProjectModal = openProjectModal;
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal');
+      const card = document.getElementById('project-modal-card');
+      if (!modal || !card) return;
+
+      modal.classList.add('opacity-0');
+      card.classList.remove('opacity-100', 'scale-100', 'translate-y-0');
+      card.classList.add('opacity-0', 'scale-[0.94]', 'translate-y-4');
+      setTimeout(() => {
+        if (modal.classList.contains('opacity-0')) {
+          modal.classList.add('pointer-events-none');
+        }
+      }, 400);
+    }
+
+    function openContactModal() {
+      const modal = document.getElementById('contact-modal');
+      const card = document.getElementById('contact-modal-card');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }
+
+    function closeContactModal() {
+      const modal = document.getElementById('contact-modal');
+      const card = document.getElementById('contact-modal-card');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      card.classList.remove('scale-100');
+      card.classList.add('scale-95');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeContactModal();
+        const modal = document.getElementById('project-modal');
+        if (modal && !modal.classList.contains('pointer-events-none')) {
+          closeProjectModal();
+        }
+      }
+    });
+
+    function submitContactForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const service = document.getElementById('contact-service').value;
+      closeContactModal();
+      showToast(`Thank you, ${name}! Your inquiry for "${service}" has been received.`);
+      document.getElementById('contact-form').reset();
+    }
+
+    // Cart Handlers
+    function addToCart(title, price) {
+      cart.push({ title, price, id: Date.now() });
+      updateCartUI();
+      showToast(`Added ${title} ($${price.toFixed(2)}) to your bag.`);
+    }
+
+    function updateCartUI() {
+      const badge = document.getElementById('cart-badge');
+      if (cart.length > 0) {
+        badge.innerText = cart.length;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+
+      const list = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+      if (cart.length === 0) {
+        list.innerHTML = `<p class="text-xs text-neutral-400 text-center py-8">Your bag is empty.</p>`;
+        totalEl.innerText = '$0.00';
+      } else {
+        let total = 0;
+        list.innerHTML = cart.map((item, idx) => {
+          total += item.price;
+          return `
+            <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-xl border border-neutral-200">
+              <div>
+                <p class="text-xs font-bold text-black uppercase">${item.title}</p>
+                <p class="text-xs text-neutral-500 font-mono">$${item.price.toFixed(2)}</p>
+              </div>
+              <button onclick="removeFromCart(${idx})" class="text-xs text-red-500 hover:underline">Remove</button>
+            </div>
+          `;
+        }).join('');
+        totalEl.innerText = `$${total.toFixed(2)}`;
+      }
+    }
+
+    function removeFromCart(idx) {
+      cart.splice(idx, 1);
+      updateCartUI();
+    }
+
+    function openCartModal() {
+      updateCartUI();
+      const modal = document.getElementById('cart-modal');
+      const card = document.getElementById('cart-modal-card');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }
+
+    function closeCartModal() {
+      const modal = document.getElementById('cart-modal');
+      const card = document.getElementById('cart-modal-card');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      card.classList.remove('scale-100');
+      card.classList.add('scale-95');
+    }
+
+    function checkoutCart() {
+      if (cart.length === 0) {
+        showToast('Your bag is currently empty.');
+        return;
+      }
+      closeCartModal();
+      showToast('Redirecting to secure checkout...');
+      setTimeout(() => {
+        cart = [];
+        updateCartUI();
+        showToast('Order confirmed! Thank you for supporting designer craftsmanship.');
+      }, 1000);
+    }
+
+    // Interactive micro-interactions
+    function toggleHeart(btn) {
+      if (btn.innerText === '♡') {
+        btn.innerText = '♥';
+        btn.classList.add('text-red-500');
+        btn.classList.remove('text-neutral-400');
+        showToast('Added Wood Chair to saved items.');
+      } else {
+        btn.innerText = '♡';
+        btn.classList.remove('text-red-500');
+        btn.classList.add('text-neutral-400');
+      }
+    }
+
+    function triggerSolarAction() {
+      const kwh = document.getElementById('solar-kwh');
+      if (kwh) {
+        kwh.innerText = (parseFloat(kwh.innerText) + 0.8).toFixed(1) + ' kWh';
+      }
+      showToast('Live solar telemetry synchronized (+0.8 kWh).');
+    }
+
+    function copyContactEmail() {
+      const email = 'alinauxui97@gmail.com';
+      try {
+        navigator.clipboard.writeText(email).then(
+          () => showToast('Почта скопирована: ' + email),
+          () => showToast('Почта: ' + email)
+        );
+      } catch (e) {
+        showToast('Почта: ' + email);
+      }
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-drawer');
+      const content = document.getElementById('mobile-drawer-content');
+      const isOpen = !drawer.classList.contains('pointer-events-none');
+
+      if (isOpen) {
+        drawer.classList.add('opacity-0', 'pointer-events-none');
+        content.classList.add('translate-x-full');
+      } else {
+        drawer.classList.remove('opacity-0', 'pointer-events-none');
+        content.classList.remove('translate-x-full');
+      }
+    }
+
+    // Toast notification helper
+    function showToast(message) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'bg-black text-white px-5 py-3 rounded-full text-xs font-semibold shadow-2xl flex items-center gap-2 transform translate-y-4 opacity-0 transition-all duration-300 pointer-events-auto border border-neutral-700';
+      toast.innerHTML = `<span>●</span><span>${message}</span>`;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-4', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+
+
+    // Initialize application
+    function initApp() {
+
+      const sections = document.querySelectorAll('section[id], main[id]');
+      const navLinks = {
+        'home': document.getElementById('nav-home'),
+        'about': document.getElementById('nav-about'),
+        'experience': document.getElementById('nav-experience'),
+        'projects': document.getElementById('nav-projects'),
+        'process': document.getElementById('nav-process'),
+        'services': document.getElementById('nav-services')
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            Object.keys(navLinks).forEach(k => {
+              if (navLinks[k]) {
+                if (k === id) {
+                  navLinks[k].classList.add('border-neutral-300', 'text-black');
+                  navLinks[k].classList.remove('border-transparent', 'text-neutral-600');
+                } else {
+                  navLinks[k].classList.remove('border-neutral-300', 'text-black');
+                  navLinks[k].classList.add('border-transparent', 'text-neutral-600');
+                }
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-20% 0px -60% 0px' });
+
+      sections.forEach(s => observer.observe(s));
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+      initApp();
+    }
+  </script>
+
+  <!-- FlexCarousel Initialization (React Bits Component Engine) -->
+  <script type="module">
+    import { initFlexCarousel, DEFAULT_ITEMS } from './flex-carousel.js';
+
+    function startCarousel() {
+      const container = document.getElementById('flex-carousel-container');
+      if (container) {
+        window.flexCarouselInstance = initFlexCarousel(container, {
+          items: DEFAULT_ITEMS,
+          preset: 'liquid',
+          intro: 'rise',
+          cardHeight: 0.5,
+          gap: 12,
+          squeeze: 0.2,
+          focusOnClick: true,
+          captions: true,
+          onSelect: (index, item) => {
+            if (window.openProjectModal) {
+              window.openProjectModal(item);
+            }
+          }
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startCarousel);
+    } else {
+      startCarousel();
+    }
+  </script>
+
+  <script type="module" src="./scroll-expand-media.js"></script>
+  <script type="module" src="./experience-section.js"></script>
+
+</body>
+</html>
