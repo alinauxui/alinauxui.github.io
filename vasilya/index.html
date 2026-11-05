@@ -516,6 +516,14 @@ h3{font-weight:700}
 .portrait,.gallery img{border-radius:16px;box-shadow:var(--shadow)}
 .empty{border-color:var(--line);background:var(--bg)}
 footer{background:var(--surface)}
+
+/* hero image: keep proportions */
+.hero-grid .hero-figure{min-width:0;max-width:100%;justify-self:center}
+.hero-grid .hero-cut{width:auto!important;height:auto!important;max-width:100%;max-height:min(620px,78vh);object-fit:contain;margin:0 auto}
+@media (max-width:900px){.hero-grid .hero-cut{width:min(330px,76vw)!important;max-height:none}}
+
+@media (max-width:1240px){.hero-feats{grid-template-columns:1fr 1fr;gap:12px 0}.hero-feats li:nth-child(3){border-left:0;padding-left:0}.hero-feats span,.hero-feats b{white-space:normal}}
+@media (max-width:900px){.hero-feats{grid-template-columns:1fr}.hero-feats li{border-left:0;padding-left:0}}
 </style>
 
 <div id="site">
