@@ -558,6 +558,28 @@ footer{background:var(--surface)}
   </div>
 </header>
 
+<section class="picker-band" id="picker">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Подбор за 10 секунд</span>
+      <h2>Какое занятие <span class="hl">подойдёт вам?</span></h2>
+      <p class="lead">Выберите, что для вас сейчас важнее всего.</p>
+    </div>
+    <div class="picker">
+      <div class="picker-opts" role="radiogroup" aria-label="Что для вас важнее">
+        <button type="button" role="radio" aria-checked="false" data-k="pain">Болит спина или шея</button>
+        <button type="button" role="radio" aria-checked="false" data-k="home">Хочу заниматься из дома</button>
+        <button type="button" role="radio" aria-checked="false" data-k="personal">Нужен личный подход</button>
+        <button type="button" role="radio" aria-checked="false" data-k="relax">Хочу снять стресс</button>
+        <button type="button" role="radio" aria-checked="false" data-k="teach">Хочу стать инструктором</button>
+      </div>
+      <div class="picker-result" id="picker-result" aria-live="polite">
+        <span class="muted">Здесь появится совет, с чего начать.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="about white-band" id="about">
@@ -603,27 +625,7 @@ footer{background:var(--surface)}
   </div>
 </section>
 
-<section class="picker-band" id="picker">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Подбор за 10 секунд</span>
-      <h2>Какое занятие <span class="hl">подойдёт вам?</span></h2>
-      <p class="lead">Выберите, что для вас сейчас важнее всего.</p>
-    </div>
-    <div class="picker">
-      <div class="picker-opts" role="radiogroup" aria-label="Что для вас важнее">
-        <button type="button" role="radio" aria-checked="false" data-k="pain">Болит спина или шея</button>
-        <button type="button" role="radio" aria-checked="false" data-k="home">Хочу заниматься из дома</button>
-        <button type="button" role="radio" aria-checked="false" data-k="personal">Нужен личный подход</button>
-        <button type="button" role="radio" aria-checked="false" data-k="relax">Хочу снять стресс</button>
-        <button type="button" role="radio" aria-checked="false" data-k="teach">Хочу стать инструктором</button>
-      </div>
-      <div class="picker-result" id="picker-result" aria-live="polite">
-        <span class="muted">Здесь появится совет, с чего начать.</span>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 
