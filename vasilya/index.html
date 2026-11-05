@@ -960,8 +960,8 @@ footer{background:var(--surface)}
   // Schedule (editable by the trainer)
   function hk(n){n=(n||'').toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9]+/g,' ').trim();return n.indexOf('онлайн')===0?'online':n}
   var DEFAULT_HALLS=[
-    {name:'Байтик Батыра',studio:'Студия Sattva',address:'Байтик Батыра, 66/1',note:'Кабинет 105',phone:'0709 11 22 12',map:'https://maps.app.goo.gl/qorpxy2wd3gjWtv66'},
-    {name:'Токтогула',studio:'Студия Sattva',address:'Токтогула, 167',note:'',phone:'0708 11 22 12',map:'https://maps.app.goo.gl/VuKJxDSVh8QGyGRX9'}];
+    {name:'Байтик Батыра',studio:'Студия Sattva',address:'Байтик Батыра, 66/1',note:'Кабинет 105',phone:'0709 11 22 12',map:'https://maps.app.goo.gl/qorpxy2wd3gjWtv66',gis:'https://2gis.kg/bishkek/firm/70000001095637329'},
+    {name:'Токтогула',studio:'Студия Sattva',address:'Токтогула, 167',note:'',phone:'0708 11 22 12',map:'https://maps.app.goo.gl/VuKJxDSVh8QGyGRX9',gis:'https://2gis.kg/bishkek/firm/70000001046162075'}];
   if(!data.halls) data.halls=JSON.parse(JSON.stringify(DEFAULT_HALLS));
   var DEFAULT_SCHED={'online':[{d:[1,3,5],t:'19:00–20:00'}],'байтик батыра':[{d:[1,3,5],t:'09:00–10:10'},{d:[2,4],t:'12:00–13:10'},{d:[6],t:'10:30–11:40'}],'токтогула':[{d:[1,3,5],t:'17:00–18:10'},{d:[2,4],t:'06:45–07:55'}]};
   if(!data.schedule||data.schedule.sovetskaya) data.schedule=JSON.parse(JSON.stringify(DEFAULT_SCHED));
@@ -974,7 +974,11 @@ footer{background:var(--surface)}
       top.appendChild(el('span','tag','Зал'));
       var t=el('h3',null,h.address||h.name); t.style.marginTop='10px'; top.appendChild(t);
       var sub=el('div','addr'); var bits=[h.studio,h.note].filter(Boolean); if(bits.length) sub.appendChild(document.createTextNode(bits.join(' · ')+' · '));
-      var hasMap=h.map&&/^https:\/\//.test(h.map); var m=el('a',null,!hasMap||/2gis/i.test(h.map)?'Открыть в 2ГИС':(/goo\.gl|google/i.test(h.map)?'Открыть в Google Картах':'Открыть на карте')); m.href=hasMap?h.map:'https://2gis.kg/bishkek/search/'+encodeURIComponent(h.address||h.name); m.target='_blank'; m.rel='noopener'; sub.appendChild(m); top.appendChild(sub); art.appendChild(top);
+      var ok=function(u){return u&&/^https:\/\//.test(u)}; var links=[]; var g=[h.map,h.gis].filter(ok);
+      var gm=g.filter(function(u){return !/2gis/i.test(u)})[0], tg=g.filter(function(u){return /2gis/i.test(u)})[0];
+      if(gm) links.push(['Google Карты',gm]);
+      links.push(['2ГИС',tg||'https://2gis.kg/bishkek/search/'+encodeURIComponent(h.address||h.name)]);
+      links.forEach(function(l,i){ if(i) sub.appendChild(document.createTextNode(' · ')); var m=el('a',null,l[0]); m.href=l[1]; m.target='_blank'; m.rel='noopener'; sub.appendChild(m); }); top.appendChild(sub); art.appendChild(top);
       var ul=el('ul','slots'); ul.setAttribute('data-sched',hk(h.name)); art.appendChild(ul);
       if(h.phone){ var c=el('div','hall-contact'); var d=digits(h.phone);
         if(d){ var w=el('a','btn hall-wa',''); w.href='https://wa.me/'+d+'?text='+encodeURIComponent('Здравствуйте! Хочу записаться на «Здоровую спину» с Василей. Зал: '+(h.address||h.name)+(h.studio?' ('+h.studio+')':'')+'.'); w.target='_blank'; w.rel='noopener';
@@ -1200,7 +1204,7 @@ footer{background:var(--surface)}
     function parseDays(v){return (v||'').toLowerCase().split(/[^а-яё]+/).map(function(x){return DAYMAP[x.slice(0,2)]}).filter(function(x){return x!==undefined})}
     Promise.all([tab('Залы').catch(function(){return null}), tab('Расписание').catch(function(){return null})]).then(function(res){
       var hr=res[0], sr=res[1];
-      if(hr){ var hs=hr.filter(function(r){return (r[0]||'').trim()}).map(function(r){return {name:r[0].trim(),studio:(r[1]||'').trim(),address:(r[2]||'').trim(),note:(r[3]||'').trim(),phone:(r[4]||'').trim(),map:(r[5]||'').trim()}}); if(hs.length) data.halls=hs; }
+      if(hr){ var hs=hr.filter(function(r){return (r[0]||'').trim()}).map(function(r){return {name:r[0].trim(),studio:(r[1]||'').trim(),address:(r[2]||'').trim(),note:(r[3]||'').trim(),phone:(r[4]||'').trim(),map:(r[5]||'').trim(),gis:(r[6]||'').trim()}}); if(hs.length) data.halls=hs; }
       renderHalls();
       if(sr&&sr.length){ var sc={}; sr.forEach(function(r){ if(!r[0]||!r[2]) return; var k=hk(r[0]); var d=parseDays(r[1]); if(!d.length) return; (sc[k]=sc[k]||[]).push({d:d,t:r[2].trim()}); }); data.schedule=sc; }
       renderSchedule();
