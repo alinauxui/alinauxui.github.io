@@ -524,6 +524,16 @@ footer{background:var(--surface)}
 
 @media (max-width:1240px){.hero-feats{grid-template-columns:1fr 1fr;gap:12px 0}.hero-feats li:nth-child(3){border-left:0;padding-left:0}.hero-feats span,.hero-feats b{white-space:normal}}
 @media (max-width:900px){.hero-feats{grid-template-columns:1fr}.hero-feats li{border-left:0;padding-left:0}}
+
+/* hero feats: never overlap */
+.hero-feats{display:flex!important;flex-wrap:wrap;gap:14px 0;width:100%}
+.hero-feats li{flex:0 0 auto;padding:0 20px!important;border-left:1.5px solid var(--line)!important;margin:0}
+.hero-feats li:first-child{padding-left:0!important;border-left:0!important}
+.hero-feats span,.hero-feats b{white-space:nowrap!important}
+@media (max-width:900px){.hero-feats{flex-direction:column}.hero-feats li{padding:0!important;border-left:0!important}}
+
+.hero-feats{gap:14px 32px!important}
+.hero-feats li,.hero-feats li:first-child{padding:0!important;border-left:0!important}
 </style>
 
 <div id="site">
