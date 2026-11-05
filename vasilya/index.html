@@ -546,6 +546,11 @@ footer{background:var(--surface)}
 
 .hero-feats{gap:14px 32px!important}
 .hero-feats li,.hero-feats li:first-child{padding:0!important;border-left:0!important}
+
+.hall-contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:4px}
+.btn.hall-wa{background:#25D366;color:#fff;box-shadow:0 8px 18px -10px #25D366;padding:12px 20px;font-size:.95rem;gap:8px}
+.hall-phone{color:var(--muted);font-size:.92rem}
+.places .place{align-content:start}
 </style>
 
 <div id="site">
@@ -971,7 +976,12 @@ footer{background:var(--surface)}
       var sub=el('div','addr'); var bits=[h.studio,h.note].filter(Boolean); if(bits.length) sub.appendChild(document.createTextNode(bits.join(' · ')+' · '));
       var m=el('a',null,'Открыть в 2ГИС'); m.href=(h.map&&/^https:\/\//.test(h.map))?h.map:'https://2gis.kg/bishkek/search/'+encodeURIComponent(h.address||h.name); m.target='_blank'; m.rel='noopener'; sub.appendChild(m); top.appendChild(sub); art.appendChild(top);
       var ul=el('ul','slots'); ul.setAttribute('data-sched',hk(h.name)); art.appendChild(ul);
-      if(h.phone){ var c=el('div','addr'); c.appendChild(document.createTextNode('Запись: ')); c.appendChild(el('span','num',h.phone)); var d=digits(h.phone); if(d){ c.appendChild(document.createTextNode(' · ')); var w=el('a',null,'WhatsApp'); w.href='https://wa.me/'+d; w.target='_blank'; w.rel='noopener'; c.appendChild(w);} art.appendChild(c); }
+      if(h.phone){ var c=el('div','hall-contact'); var d=digits(h.phone);
+        if(d){ var w=el('a','btn hall-wa',''); w.href='https://wa.me/'+d+'?text='+encodeURIComponent('Здравствуйте! Хочу записаться на «Здоровую спину» с Василей. Зал: '+(h.address||h.name)+(h.studio?' ('+h.studio+')':'')+'.'); w.target='_blank'; w.rel='noopener';
+          w.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg>';
+          w.appendChild(document.createTextNode(h.studio?'WhatsApp '+h.studio.replace(/^Студия\s+/i,'студии '):'Записаться в WhatsApp')); c.appendChild(w); }
+        var ph=el('span','hall-phone'); ph.appendChild(document.createTextNode('или позвоните: ')); ph.appendChild(el('span','num',h.phone)); c.appendChild(ph);
+        art.appendChild(c); }
       box.appendChild(art);
     });
     var names=data.halls.map(function(h){return h.name});
