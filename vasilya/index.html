@@ -960,8 +960,8 @@ footer{background:var(--surface)}
   // Schedule (editable by the trainer)
   function hk(n){n=(n||'').toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9]+/g,' ').trim();return n.indexOf('онлайн')===0?'online':n}
   var DEFAULT_HALLS=[
-    {name:'Байтик Батыра',studio:'Студия Sattva',address:'Байтик Батыра, 66/1',note:'Кабинет 105',phone:'0709 11 22 12',map:''},
-    {name:'Токтогула',studio:'Студия Sattva',address:'Токтогула, 167',note:'',phone:'0708 11 22 12',map:''}];
+    {name:'Байтик Батыра',studio:'Студия Sattva',address:'Байтик Батыра, 66/1',note:'Кабинет 105',phone:'0709 11 22 12',map:'https://maps.app.goo.gl/qorpxy2wd3gjWtv66'},
+    {name:'Токтогула',studio:'Студия Sattva',address:'Токтогула, 167',note:'',phone:'0708 11 22 12',map:'https://maps.app.goo.gl/VuKJxDSVh8QGyGRX9'}];
   if(!data.halls) data.halls=JSON.parse(JSON.stringify(DEFAULT_HALLS));
   var DEFAULT_SCHED={'online':[{d:[1,3,5],t:'19:00–20:00'}],'байтик батыра':[{d:[1,3,5],t:'09:00–10:10'},{d:[2,4],t:'12:00–13:10'},{d:[6],t:'10:30–11:40'}],'токтогула':[{d:[1,3,5],t:'17:00–18:10'},{d:[2,4],t:'06:45–07:55'}]};
   if(!data.schedule||data.schedule.sovetskaya) data.schedule=JSON.parse(JSON.stringify(DEFAULT_SCHED));
@@ -974,7 +974,7 @@ footer{background:var(--surface)}
       top.appendChild(el('span','tag','Зал'));
       var t=el('h3',null,h.address||h.name); t.style.marginTop='10px'; top.appendChild(t);
       var sub=el('div','addr'); var bits=[h.studio,h.note].filter(Boolean); if(bits.length) sub.appendChild(document.createTextNode(bits.join(' · ')+' · '));
-      var m=el('a',null,'Открыть в 2ГИС'); m.href=(h.map&&/^https:\/\//.test(h.map))?h.map:'https://2gis.kg/bishkek/search/'+encodeURIComponent(h.address||h.name); m.target='_blank'; m.rel='noopener'; sub.appendChild(m); top.appendChild(sub); art.appendChild(top);
+      var hasMap=h.map&&/^https:\/\//.test(h.map); var m=el('a',null,!hasMap||/2gis/i.test(h.map)?'Открыть в 2ГИС':(/goo\.gl|google/i.test(h.map)?'Открыть в Google Картах':'Открыть на карте')); m.href=hasMap?h.map:'https://2gis.kg/bishkek/search/'+encodeURIComponent(h.address||h.name); m.target='_blank'; m.rel='noopener'; sub.appendChild(m); top.appendChild(sub); art.appendChild(top);
       var ul=el('ul','slots'); ul.setAttribute('data-sched',hk(h.name)); art.appendChild(ul);
       if(h.phone){ var c=el('div','hall-contact'); var d=digits(h.phone);
         if(d){ var w=el('a','btn hall-wa',''); w.href='https://wa.me/'+d+'?text='+encodeURIComponent('Здравствуйте! Хочу записаться на «Здоровую спину» с Василей. Зал: '+(h.address||h.name)+(h.studio?' ('+h.studio+')':'')+'.'); w.target='_blank'; w.rel='noopener';
