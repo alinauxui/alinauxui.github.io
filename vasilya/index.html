@@ -3,11 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Пилатес и программа «Здоровая спина» с тренером Василей Кадничанской. Группы в Бишкеке и онлайн.">
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Здоровая спина с Василей Кадничанской · пилатес в Бишкеке</title>
+<meta name="description" content="Пилатес и программа «Здоровая спина» с тренером Василей Кадничанской. Группы в Бишкеке и онлайн. Более 15 лет опыта.">
+<link rel="canonical" href="https://vasilya-pilates.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Здоровая спина с Василей">
+<meta property="og:title" content="Здоровая спина с Василей Кадничанской">
+<meta property="og:description" content="Пилатес в Бишкеке и онлайн. Более 15 лет опыта. Запись в WhatsApp.">
+<meta property="og:url" content="https://vasilya-pilates.github.io/">
+<meta property="og:image" content="https://vasilya-pilates.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F6F1EE">
 </head>
 <body>
-<title>Здоровая спина с Василей</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
@@ -567,7 +579,7 @@ footer{background:var(--surface)}
       <ul class="hero-feats">
         <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="3" rx="1.5"/><rect x="8.5" y="7" width="7" height="3" rx="1.5"/><rect x="8" y="11.5" width="8" height="3" rx="1.5"/><rect x="8.5" y="16" width="7" height="3" rx="1.5"/><path d="M12 19.5v2"/></svg><div><b>Более 15 лет опыта</b><span>в пилатесе и «Здоровой спине»</span></div></li>
         <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/><circle cx="12" cy="10.5" r="2"/></svg><div><b>Онлайн</b><span>Пн · Ср · Пт, 19:00</span></div></li>
-        <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.4-6-11a6 6 0 1 1 12 0c0 5.6-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg><div><b>В зале</b><span>Байтик Батыра и Токтогула</span></div></li>
+        <li><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.4-6-11a6 6 0 1 1 12 0c0 5.6-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg><div><b>В зале</b><span id="hero-halls">Байтик Батыра и Токтогула</span></div></li>
       </ul>
     </div>
     <div class="hero-figure">
@@ -662,7 +674,7 @@ footer{background:var(--surface)}
         <span class="switch-title">Онлайн</span><span class="switch-sub">Google Meet, из дома</span>
       </button>
       <button class="switch-btn" role="tab" type="button" id="tab-offline" aria-controls="panel-offline" aria-selected="false" data-tab="offline">
-        <span class="switch-title">Офлайн</span><span class="switch-sub">2 зала в Бишкеке</span>
+        <span class="switch-title">Офлайн</span><span class="switch-sub" id="halls-count">2 зала в Бишкеке</span>
       </button>
     </div>
 
@@ -702,18 +714,7 @@ footer{background:var(--surface)}
     </div>
 
     <div class="panel" role="tabpanel" id="panel-offline" aria-labelledby="tab-offline" hidden>
-      <div class="places">
-        <article class="place">
-          <div><span class="tag">Зал</span><h3 style="margin-top:10px">Байтик Батыра, 66/1</h3><div class="addr">Кабинет 105 · <a href="https://2gis.kg/bishkek/search/%D0%91%D0%B0%D0%B9%D1%82%D0%B8%D0%BA%20%D0%91%D0%B0%D1%82%D1%8B%D1%80%D0%B0%2066/1" target="_blank" rel="noopener">Открыть в 2ГИС</a></div></div>
-          <ul class="slots" data-sched="sovetskaya"></ul>
-          <div class="addr">Запись: <span class="num">0709 11 22 12</span> · <a href="https://wa.me/996709112212" target="_blank" rel="noopener">WhatsApp</a></div>
-        </article>
-        <article class="place">
-          <div><span class="tag">Зал</span><h3 style="margin-top:10px">Токтогула, 167</h3><div class="addr">Студия Sattva · <a href="https://2gis.kg/bishkek/search/%D0%A2%D0%BE%D0%BA%D1%82%D0%BE%D0%B3%D1%83%D0%BB%D0%B0%20167" target="_blank" rel="noopener">Открыть в 2ГИС</a></div></div>
-          <ul class="slots" data-sched="toktogula"></ul>
-          <div class="addr">Запись: <span class="num">0708 11 22 12</span> · <a href="https://wa.me/996708112212" target="_blank" rel="noopener">WhatsApp</a></div>
-        </article>
-      </div>
+      <div class="places" id="places"></div>
       <p class="sched-note">Тренировка длится 1 час 10 минут. Во все группы нужна предварительная запись по телефону. Сегодняшние занятия подсвечены.</p>
 
       <div class="pricebox">
@@ -902,7 +903,7 @@ footer{background:var(--surface)}
       <div class="contact-btns"><a class="btn" href="https://wa.me/996557857788?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8F%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%82%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D1%83." target="_blank" rel="noopener">Написать в WhatsApp</a>
       <a class="btn ig-btn" href="https://www.instagram.com/vasilia.kadnichanskaia/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@vasilia.kadnichanskaia</a></div>
     </div>
-    <p class="contact-extra">Администраторы залов: Байтик Батыра, 66/1 — <span class="num">0709 11 22 12</span> · Токтогула, 167 (Sattva) — <span class="num">0708 11 22 12</span></p>
+    <p class="contact-extra" id="hall-phones"></p>
   </div>
 </section>
 
@@ -952,8 +953,33 @@ footer{background:var(--surface)}
   })();
 
   // Schedule (editable by the trainer)
-  var DEFAULT_SCHED={online:[{d:[1,3,5],t:'19:00–20:00'}],sovetskaya:[{d:[1,3,5],t:'09:00–10:10'},{d:[2,4],t:'12:00–13:10'},{d:[6],t:'10:30–11:40'}],toktogula:[{d:[1,3,5],t:'17:00–18:10'},{d:[2,4],t:'06:45–07:55'}]};
-  if(!data.schedule) data.schedule=JSON.parse(JSON.stringify(DEFAULT_SCHED));
+  function hk(n){n=(n||'').toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9]+/g,' ').trim();return n.indexOf('онлайн')===0?'online':n}
+  var DEFAULT_HALLS=[
+    {name:'Байтик Батыра',studio:'',address:'Байтик Батыра, 66/1',note:'Кабинет 105',phone:'0709 11 22 12',map:''},
+    {name:'Токтогула',studio:'Студия Sattva',address:'Токтогула, 167',note:'',phone:'0708 11 22 12',map:''}];
+  if(!data.halls) data.halls=JSON.parse(JSON.stringify(DEFAULT_HALLS));
+  var DEFAULT_SCHED={'online':[{d:[1,3,5],t:'19:00–20:00'}],'байтик батыра':[{d:[1,3,5],t:'09:00–10:10'},{d:[2,4],t:'12:00–13:10'},{d:[6],t:'10:30–11:40'}],'токтогула':[{d:[1,3,5],t:'17:00–18:10'},{d:[2,4],t:'06:45–07:55'}]};
+  if(!data.schedule||data.schedule.sovetskaya) data.schedule=JSON.parse(JSON.stringify(DEFAULT_SCHED));
+  function digits(p){p=(p||'').replace(/\D/g,'');if(p.length===10&&p[0]==='0')p='996'+p.slice(1);if(p.length===9)p='996'+p;return p}
+  function plural(n){var a=n%10,b=n%100;return (a===1&&b!==11)?'зал':(a>=2&&a<=4&&(b<10||b>=20))?'зала':'залов'}
+  function renderHalls(){
+    var box=document.getElementById('places'); if(!box) return; box.textContent='';
+    data.halls.forEach(function(h){
+      var art=el('article','place'); var top=el('div');
+      top.appendChild(el('span','tag','Зал'));
+      var t=el('h3',null,h.address||h.name); t.style.marginTop='10px'; top.appendChild(t);
+      var sub=el('div','addr'); var bits=[h.studio,h.note].filter(Boolean); if(bits.length) sub.appendChild(document.createTextNode(bits.join(' · ')+' · '));
+      var m=el('a',null,'Открыть в 2ГИС'); m.href=(h.map&&/^https:\/\//.test(h.map))?h.map:'https://2gis.kg/bishkek/search/'+encodeURIComponent(h.address||h.name); m.target='_blank'; m.rel='noopener'; sub.appendChild(m); top.appendChild(sub); art.appendChild(top);
+      var ul=el('ul','slots'); ul.setAttribute('data-sched',hk(h.name)); art.appendChild(ul);
+      if(h.phone){ var c=el('div','addr'); c.appendChild(document.createTextNode('Запись: ')); c.appendChild(el('span','num',h.phone)); var d=digits(h.phone); if(d){ c.appendChild(document.createTextNode(' · ')); var w=el('a',null,'WhatsApp'); w.href='https://wa.me/'+d; w.target='_blank'; w.rel='noopener'; c.appendChild(w);} art.appendChild(c); }
+      box.appendChild(art);
+    });
+    var names=data.halls.map(function(h){return h.name});
+    var hh=document.getElementById('hero-halls'); if(hh) hh.textContent=names.length>1?names.slice(0,-1).join(', ')+' и '+names[names.length-1]:(names[0]||'');
+    var hc=document.getElementById('halls-count'); if(hc) hc.textContent=data.halls.length+' '+plural(data.halls.length)+' в Бишкеке';
+    var hp=document.getElementById('hall-phones'); if(hp){ var ph=data.halls.filter(function(h){return h.phone}).map(function(h){return (h.address||h.name)+(h.studio?' ('+h.studio+')':'')+' — '+h.phone}); hp.textContent=ph.length?'Администраторы залов: '+ph.join(' · '):''; }
+  }
+  renderHalls();
   var DAYS=[[1,'Пн'],[2,'Вт'],[3,'Ср'],[4,'Чт'],[5,'Пт'],[6,'Сб'],[0,'Вс']];
   function dayLabel(arr){ return DAYS.filter(function(x){return arr.indexOf(x[0])>=0}).map(function(x){return x[1]}).join(' · '); }
   function renderSchedule(){
@@ -1018,7 +1044,7 @@ footer{background:var(--surface)}
   (function(){
     var box=document.getElementById('picker-result'); if(!box) return;
     var R={
-      pain:['Группа «Здоровая спина» в зале','Тренер видит вас и поправляет технику. Начните с групп на Байтик Батыра или Токтогула. Разовое занятие в студии Sattva стоит 800 сом.','12 занятий · 5 000 сом','Смотреть расписание залов','#offline'],
+      pain:['Группа «Здоровая спина» в зале','Тренер видит вас и поправляет технику. Начните с группы в любом из залов. Разовое занятие в студии Sattva стоит 800 сом.','12 занятий · 5 000 сом','Смотреть расписание залов','#offline'],
       home:['Онлайн-группа в Google Meet','Пн, Ср и Пт в 19:00, из дома. Ссылку пришлём в закрытую группу WhatsApp.','4 000 сом в месяц','Записаться в онлайн-группу','https://wa.me/996557857788?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8F%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BD%D0%B8%D0%BC%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B5.'],
       personal:['Индивидуальные занятия','Программа под ваше состояние, онлайн или в зале, время согласуем вместе.','12 занятий · 15 000 сом','Записаться','https://wa.me/996557857788?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8F%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F.'],
       relax:['Ребозо и психосоматика','Глубокое расслабление тела с платком ребозо и работа с зажимами, которые оставляет стресс.','Сеанс · 5 000 сом','Записаться на сеанс','https://wa.me/996557857788?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8F%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D0%B5%D0%B0%D0%BD%D1%81%20%D1%80%D0%B5%D0%B1%D0%BE%D0%B7%D0%BE.'],
@@ -1160,9 +1186,15 @@ footer{background:var(--surface)}
   function parseCSV(t){var rows=[],row=[],f='',q=false;for(var i=0;i<t.length;i++){var c=t[i];if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}else if(c=='"')q=true;else if(c==','){row.push(f);f=''}else if(c=='\n'){row.push(f);rows.push(row);row=[];f=''}else if(c!='\r')f+=c}if(f||row.length){row.push(f);rows.push(row)}return rows}
   function tab(name){return fetch('https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?tqx=out:csv&sheet='+encodeURIComponent(name)).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){var rows=parseCSV(t).filter(function(r){return r.some(function(x){return x.trim()})});return rows.slice(1)})}
   var DAYMAP={'пн':1,'вт':2,'ср':3,'чт':4,'пт':5,'сб':6,'вс':0};
-  function zoneKey(z){z=(z||'').toLowerCase();if(z.indexOf('онлайн')>=0)return 'online';if(z.indexOf('байтик')>=0||z.indexOf('совет')>=0)return 'sovetskaya';if(z.indexOf('токтогул')>=0||z.indexOf('sattva')>=0||z.indexOf('сатв')>=0)return 'toktogula';return null}
   if(SHEET_ID){
-    tab('Расписание').then(function(rows){var sc={online:[],sovetskaya:[],toktogula:[]};rows.forEach(function(r){var k=zoneKey(r[0]);if(!k||!r[2])return;var d=(r[1]||'').toLowerCase().split(/[^а-яё]+/).map(function(x){return DAYMAP[x.slice(0,2)]}).filter(function(x){return x!==undefined});if(d.length)sc[k].push({d:d,t:r[2].trim()})});if(rows.length){data.schedule=sc;renderSchedule()}}).catch(function(){});
+    function parseDays(v){return (v||'').toLowerCase().split(/[^а-яё]+/).map(function(x){return DAYMAP[x.slice(0,2)]}).filter(function(x){return x!==undefined})}
+    Promise.all([tab('Залы').catch(function(){return null}), tab('Расписание').catch(function(){return null})]).then(function(res){
+      var hr=res[0], sr=res[1];
+      if(hr){ var hs=hr.filter(function(r){return (r[0]||'').trim()}).map(function(r){return {name:r[0].trim(),studio:(r[1]||'').trim(),address:(r[2]||'').trim(),note:(r[3]||'').trim(),phone:(r[4]||'').trim(),map:(r[5]||'').trim()}}); if(hs.length) data.halls=hs; }
+      renderHalls();
+      if(sr&&sr.length){ var sc={}; sr.forEach(function(r){ if(!r[0]||!r[2]) return; var k=hk(r[0]); var d=parseDays(r[1]); if(!d.length) return; (sc[k]=sc[k]||[]).push({d:d,t:r[2].trim()}); }); data.schedule=sc; }
+      renderSchedule();
+    });
     tab('Ретриты').then(function(rows){data.retreats=rows.filter(function(r){return r[0]}).map(function(r){return {title:r[0],date:r[1]||'',place:r[2]||'',price:r[3]||'',link:r[4]||'',text:r[5]||''}});render()}).catch(function(){});
     tab('Отзывы').then(function(rows){var v=rows.filter(function(r){return r[2]}).map(function(r){return {name:r[0]||'Ученица Васили',format:r[1]||'',text:r[2]}});if(v.length){data.reviews=v;render()}}).catch(function(){});
   }
