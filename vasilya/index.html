@@ -960,7 +960,7 @@ footer{background:var(--surface)}
   // Schedule (editable by the trainer)
   function hk(n){n=(n||'').toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9]+/g,' ').trim();return n.indexOf('онлайн')===0?'online':n}
   var DEFAULT_HALLS=[
-    {name:'Байтик Батыра',studio:'',address:'Байтик Батыра, 66/1',note:'Кабинет 105',phone:'0709 11 22 12',map:''},
+    {name:'Байтик Батыра',studio:'Студия Sattva',address:'Байтик Батыра, 66/1',note:'Кабинет 105',phone:'0709 11 22 12',map:''},
     {name:'Токтогула',studio:'Студия Sattva',address:'Токтогула, 167',note:'',phone:'0708 11 22 12',map:''}];
   if(!data.halls) data.halls=JSON.parse(JSON.stringify(DEFAULT_HALLS));
   var DEFAULT_SCHED={'online':[{d:[1,3,5],t:'19:00–20:00'}],'байтик батыра':[{d:[1,3,5],t:'09:00–10:10'},{d:[2,4],t:'12:00–13:10'},{d:[6],t:'10:30–11:40'}],'токтогула':[{d:[1,3,5],t:'17:00–18:10'},{d:[2,4],t:'06:45–07:55'}]};
