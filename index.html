@@ -382,16 +382,18 @@
     <div class="flex gap-2 mb-6 overflow-x-auto no-scrollbar pb-1" role="tablist" aria-label="Проекты">
         <button type="button" role="tab" id="pc-tab-hb" aria-controls="pc-panel-hb" aria-selected="true" onclick="selectProcess(0)"
           class="pc-tab px-5 py-2.5 rounded-full border text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Healthy Back</button>
-        <button type="button" role="tab" id="pc-tab-wd" aria-controls="pc-panel-wd" aria-selected="false" onclick="selectProcess(1)"
+        <button type="button" role="tab" id="pc-tab-vs" aria-controls="pc-panel-vs" aria-selected="false" onclick="selectProcess(1)"
+          class="pc-tab px-5 py-2.5 rounded-full border text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Сайт тренера</button>
+        <button type="button" role="tab" id="pc-tab-wd" aria-controls="pc-panel-wd" aria-selected="false" onclick="selectProcess(2)"
           class="pc-tab px-5 py-2.5 rounded-full border text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">WeDevX</button>
-        <button type="button" role="tab" id="pc-tab-ml" aria-controls="pc-panel-ml" aria-selected="false" onclick="selectProcess(2)"
+        <button type="button" role="tab" id="pc-tab-ml" aria-controls="pc-panel-ml" aria-selected="false" onclick="selectProcess(3)"
           class="pc-tab px-5 py-2.5 rounded-full border text-xs font-bold tracking-widest uppercase transition whitespace-nowrap">Mom Life</button>
     </div>
       <div id="pc-panel-hb" role="tabpanel" aria-labelledby="pc-tab-hb" class="pc-panel">
         <div class="rounded-3xl border border-neutral-300 bg-white p-6 md:p-10 grid gap-8">
           <div class="grid gap-4">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">01 / 03</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">2023 — н. в.</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Health tech</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мобильное приложение</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">0 → MVP</span>
+              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">01 / 04</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">2023 — н. в.</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Health tech</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мобильное приложение</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">0 → MVP</span>
             </div>
             <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-[0.9]">Healthy Back</h3>
             <p class="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">Сооснователь и единственный продуктовый дизайнер: исследование, продукт, бизнес-модель, UX/UI.</p>
@@ -430,11 +432,54 @@
           </div>
         </div>
       </div>
+      <div id="pc-panel-vs" role="tabpanel" aria-labelledby="pc-tab-vs" class="pc-panel" hidden>
+        <div class="rounded-3xl border border-neutral-300 bg-white p-6 md:p-10 grid gap-8">
+          <div class="grid gap-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">02 / 04</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">2026</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Веб-сайт</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Сайт за 1 день</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Запущен</span>
+            </div>
+            <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-[0.9]">Сайт тренера</h3>
+            <p class="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">Первый собственный сайт тренера по пилатесу Васили Кадничанской. Делала одна, от исследования до запуска: обзвон клиентов, анализ, структура, тексты, UI-дизайн, вёрстка и запуск на GitHub Pages.</p>
+          </div>
+          <dl class="m-0">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Инсайт</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">Люди ходят к человеку, а не в студию: 17 из 63 выбрали студию из-за тренера, 5 ушли, когда тренеры сменились. Выбирают по близости (19 из 63), уходят из-за нехватки времени и переезда (25 из 63).</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Что сделала</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">Сайт о тренере, а не о студии. Подбор занятия в один клик, онлайн и офлайн одним переключателем, у каждого зала карты и WhatsApp, абонемент на 12 занятий подсвечен в прайсе, ответы на «можно ли с грыжей» — до контактов. Текст от 17 px: 53% аудитории старше 45. Расписание, залы и отзывы тренер меняет сама в Google Таблице.</dd>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-t border-neutral-200">
+              <dt class="md:col-span-3 text-[11px] font-mono font-semibold tracking-widest uppercase text-neutral-400 pt-0.5">Результат</dt>
+              <dd class="md:col-span-9 text-sm md:text-base leading-relaxed text-neutral-800 min-w-0">Сайт запущен: vasilya-pilates.github.io. Тренер: «Одна ссылка — и всё. Это облегчило мне жизнь». 6 из 7 учеников прямо назвали сайт понятным; по их замечаниям готов концепт второй версии.</dd>
+            </div>
+          </dl>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-black">
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">63</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">разговора с клиентами студии</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">1 день</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">от исследования до запуска</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">6 из 7</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">учеников назвали сайт понятным</span>
+            </div>
+            <div class="flex flex-col gap-1 min-w-0">
+              <span class="text-3xl md:text-5xl font-black tracking-tight text-black tabular-nums">53%</span>
+              <span class="text-[11px] font-semibold tracking-widest uppercase text-neutral-500">аудитории старше 45 лет</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="pc-panel-wd" role="tabpanel" aria-labelledby="pc-tab-wd" class="pc-panel" hidden>
         <div class="rounded-3xl border border-neutral-300 bg-white p-6 md:p-10 grid gap-8">
           <div class="grid gap-4">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">02 / 03</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Дек 2022 — июл 2023</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Edtech</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Веб</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Antler Singapore</span>
+              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">03 / 04</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Дек 2022 — июл 2023</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Edtech</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Веб</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Antler Singapore</span>
             </div>
             <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-[0.9]">WeDevX</h3>
             <p class="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">Стажировка в стартапе, единственный продуктовый дизайнер. Идею менторской платформы предложила сама: у школы уже была платформа обучения.</p>
@@ -477,7 +522,7 @@
         <div class="rounded-3xl border border-neutral-300 bg-white p-6 md:p-10 grid gap-8">
           <div class="grid gap-4">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">03 / 03</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">2026</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мамы и дети</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мобильное приложение</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Концепт</span>
+              <span class="text-[11px] font-mono font-semibold tracking-widest text-neutral-400 mr-2">04 / 04</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">2026</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мамы и дети</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Мобильное приложение</span><span class="px-3 py-1 rounded-full border border-neutral-300 text-[10px] font-semibold tracking-widest uppercase text-neutral-600">Концепт</span>
             </div>
             <h3 class="text-4xl md:text-6xl font-black uppercase tracking-tight text-neutral-900 leading-[0.9]">Mom Life</h3>
             <p class="text-sm md:text-base text-neutral-600 max-w-2xl leading-relaxed">Неофициальный концепт редизайна. Шрифт, цвета и таб-бар оставила из текущего Mom Life: менялись сценарии, а не узнаваемость продукта.</p>

@@ -15,6 +15,17 @@ export const DEFAULT_ITEMS = [
     link: 'https://www.behance.net/gallery/257196501/Healthy-Back-zdorovaja-spina'
   },
   {
+    src: 'cases/vasilya-cover.jpg',
+    alt: 'Сайт тренера по пилатесу Васили Кадничанской — главный экран',
+    title: 'Сайт тренера по пилатесу',
+    subtitle: 'Сайт за 1 день · запущен',
+    description: 'Первый собственный сайт Васили Кадничанской, тренера программы «Здоровая спина»: исследование аудитории, структура, дизайн, вёрстка и запуск. Делала одна, от исследования до запуска.',
+    stats: 'Запущен: vasilya-pilates.github.io · 63 разговора с клиентами · 6 из 7 учеников назвали сайт понятным',
+    deliverables: ['Анализ 63 разговоров с клиентами студии', 'Структура и тексты', 'UI-дизайн и адаптив от 360 до 1920 px', 'Вёрстка и запуск на GitHub Pages', 'Обновление через Google Таблицу без программиста'],
+    tools: ['Figma', 'Глубинные звонки', 'UX-тексты', 'Вёрстка', 'Google Таблицы'],
+    link: 'https://www.behance.net/gallery/258279657/sajt-trenera-po-pilatesu-vasili-kadnichanskoj'
+  },
+  {
     src: 'cases/wedevx-cover.jpg',
     alt: 'WeDevX — платформа менторства',
     title: 'WeDevX',
