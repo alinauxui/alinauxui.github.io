@@ -25,7 +25,8 @@
   Behance: https://www.behance.net/gallery/258279657/sajt-trenera-po-pilatesu-vasili-kadnichanskoj · Figma `90Mz5VkVNZWTxfBJ8GNqNs`
 - WeDevX: удалённая стажировка продакт-дизайнером, дек 2022 — июл 2023; идею менторской платформы предложила сама; 93% студентов хотят ментора 1-на-1; 50 студентов в 2 опросах; юзабилити-тест с 5 студентами; 0 → MVP за 8 месяцев; стартап прошёл акселератор Antler Singapore.
   Behance: https://www.behance.net/gallery/257139383/WeDevX-platforma-mentorstva-dlja-studentov-IT-kursov
-- Mom Life: неофициальный концепт редизайна, 2026, 12 экранов, с пользователями не тестировался. Ссылка на Behance пока общая (behance.net/rys2).
+- Mom Life: неофициальный концепт редизайна, 2026, 12 экранов, с пользователями не тестировался.
+  Behance: https://www.behance.net/gallery/257279043/Mom-Life-redizajn-prilozhenija-dlja-mam
 - Mama Space: с сайта убран как кейс; одна строка осталась в «Мой путь».
 - Кандидат на новый кейс: UX-аудит главной eldik.kg (Figma `eC5KHbbQJ272tEFQFwqxIH`): 18 наблюдений, 6 изменений (3 факта + 3 гипотезы), прототип на 16 экранов, на пользователях не проверен.
 

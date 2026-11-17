@@ -44,7 +44,7 @@ export const DEFAULT_ITEMS = [
     description: 'Неофициальный концепт редизайна: 12 экранов. Шрифт, цвета и таб-бар оставила от текущего Mom Life, а переработала сценарии: ленту, ночной режим, поиск и ответы врачей.',
     deliverables: ['UX-разбор текущей версии', 'Редизайн ленты и постов', 'Прототип'],
     tools: ['Figma', 'UX-аудит', 'Прототипирование'],
-    link: 'https://www.behance.net/rys2'
+    link: 'https://www.behance.net/gallery/257279043/Mom-Life-redizajn-prilozhenija-dlja-mam'
   }
 
 ];
